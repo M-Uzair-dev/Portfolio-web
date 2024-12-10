@@ -53,7 +53,7 @@ body {
 .mainpage {
   width: 100%;
   /* height: 100vh; */
-  padding-bottom: 100px;
+  padding-bottom: 15vh;
   border-radius: 0 0 100px 100px;
   display: flex;
   align-items: center;
@@ -124,7 +124,7 @@ body {
 }
 .rightside span {
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.788);
+  color: rgba(0, 0, 0, 0.459);
   font-size: 17px;
   cursor: default;
 }
@@ -136,7 +136,7 @@ body {
   width: 150px;
   border-radius: 10000px;
   border: 3px solid white;
-  margin-top: 60px;
+  margin-top: 10vh;
   margin-bottom: 20px;
 }
 .mainheading {
@@ -252,13 +252,12 @@ body {
   border-radius: 1000px;
   z-index: 1000;
 }
-.skills {
+.about {
   width: 100%;
   background-color: #f1f1f1;
-  height: 300px;
   position: relative;
 }
-.skills::before {
+.about::before {
   content: "";
   height: 50px;
   width: 50px;
@@ -269,7 +268,7 @@ body {
   transform: translateY(-50px);
   z-index: 1;
 }
-.skills::after {
+.about::after {
   content: "";
   height: 50px;
   width: 50px;
@@ -283,7 +282,7 @@ body {
 @media (max-width: 700px) {
   .navbar {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 20px;
     align-items: center;
     justify-content: center;
@@ -340,5 +339,46 @@ body {
   }
   .crousel {
     gap: 30px 10px;
+  }
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 10vh 5vw;
+  border-radius: 0 0 100px 100px;
+}
+.about h1 {
+  font-size: 40px;
+  font-family: "Otterco-Regular";
+  line-height: 1.1;
+  background: linear-gradient(to bottom right, #000000, #4b4b4b);
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+.about * {
+  text-align: center;
+}
+.about p {
+  font-size: 15px;
+  line-height: 1.3;
+  background: linear-gradient(to bottom right, #000000, #4b4b4b);
+  background-clip: text;
+  color: transparent;
+  width: 50vw;
+  margin: 0;
+}
+@media (max-width: 780px) {
+  .about p {
+    width: 70vw;
+    font-size: 15px;
+  }
+}
+@media (max-width: 450px) {
+  .about p {
+    width: 80vw;
   }
 }
