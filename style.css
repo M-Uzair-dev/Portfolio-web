@@ -201,7 +201,7 @@ body {
 }
 @keyframes move {
   from {
-    transform: translate(80%, -40%) rotate(-10deg);
+    transform: translate(80%, -30%) rotate(-10deg);
   }
   to {
     transform: translate(80%, -60%) rotate(-10deg);
