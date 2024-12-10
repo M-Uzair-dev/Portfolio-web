@@ -151,8 +151,8 @@ body {
   text-decoration: 2px solid underline;
 }
 .pfp {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   border-radius: 10000px;
   border: 3px solid white;
   margin-top: 10vh;
@@ -206,13 +206,13 @@ body {
 }
 .imagewrapper {
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 .name {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, 100%);
+  transform: translate(-50%, 90%);
   width: max-content;
   background-color: rgba(0, 0, 0, 0.068);
   border-radius: 1000px;
@@ -357,7 +357,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 10vh 5vw;
-  border-radius: 0 0 100px 100px;
+  /* border-radius: 0 0 100px 100px; */
   background-image: url("./assets/bg.png");
 }
 .about h1 {
@@ -390,5 +390,10 @@ body {
 @media (max-width: 450px) {
   .about p {
     width: 80vw;
+  }
+}
+@media (max-height: 650px) {
+  .pfp {
+    margin-top: 5vh;
   }
 }
