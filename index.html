@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="mainpage">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:svgjs="http://svgjs.dev/svgjs"
+        viewBox="0 0 700 700"
+        width="700"
+        height="700"
+        opacity="1"
+      >
+        <defs>
+          <filter
+            id="nnnoise-filter"
+            x="-20%"
+            y="-20%"
+            width="140%"
+            height="140%"
+            filterUnits="objectBoundingBox"
+            primitiveUnits="userSpaceOnUse"
+            color-interpolation-filters="linearRGB"
+          >
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.2"
+              numOctaves="4"
+              seed="15"
+              stitchTiles="stitch"
+              x="0%"
+              y="0%"
+              width="100%"
+              height="100%"
+              result="turbulence"
+            ></feTurbulence>
+            <feSpecularLighting
+              surfaceScale="10"
+              specularConstant="0.8"
+              specularExponent="20"
+              lighting-color="#7957A8"
+              x="0%"
+              y="0%"
+              width="100%"
+              height="100%"
+              in="turbulence"
+              result="specularLighting"
+            >
+              <feDistantLight azimuth="3" elevation="121"></feDistantLight>
+            </feSpecularLighting>
+          </filter>
+        </defs>
+        <rect width="700" height="700" fill="transparent"></rect>
+        <rect
+          width="700"
+          height="700"
+          fill="#7957a8"
+          filter="url(#nnnoise-filter)"
+        ></rect>
+      </svg>
+      <div class="navbar">
+        <div class="leftside">
+          <p class="email">uzairmanandev@gmail.com</p>
+          <button class="button-secondary">Copy</button>
+          <button class="button">CV</button>
+        </div>
+        <div class="rightside">
+          <a href="#">Facebook</a><span>/</span><a href="#">Github</a
+          ><span>/</span><a href="#">Whatsapp</a>
+        </div>
+      </div>
+      <div class="imagewrapper">
+        <img src="./assets/pfp.jpg" class="pfp" alt="My Image" />
+        <p class="name">Uzair Manan 👋</p>
+      </div>
+      <h1 class="mainheading">
+        <span>Building Bridges</span> <span>Between Your Brand</span>
+        <span>and the web.</span>
+        <img src="./assets/star.png" alt="star" class="star" />
+        <img src="./assets/star.png" alt="star" class="star2" />
+      </h1>
+    </div>
+    <div class="crousel">
+      <img src="./assets/crousel-logo-one.png" alt="logo" />
+      <img src="./assets/crousel-logo-two.png" alt="logo" />
+      <img src="./assets/crousel-logo-three.png" alt="logo" />
+      <img src="./assets/crousel-logo-four.png" alt="logo" />
+    </div>
+    <div class="skills">
+      <p>I Build innovative web solutions that connect ideas to impact.</p>
+      <div class="servicesheadingdiv">
+        <p class="servicesheading">Services</p>
+      </div>
+    </div>
+  </body>
+</html>
