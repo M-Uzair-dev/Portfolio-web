@@ -50,6 +50,19 @@ body {
   font-family: "Poppins", serif;
 }
 
+/* customize scrollbar  */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #bdbdbd !important;
+  border-radius: 20px;
+}
 .mainpage {
   width: 100%;
   /* height: 100vh; */
@@ -59,16 +72,22 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: #f1f1f1;
+  background-image: url("./assets/bg.png");
+  /* background-size: 30px 30px; */
 }
-.mainpage svg {
+/* .mainpage svg {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: 100% !important;
+  width: 100% !important;
   opacity: 0.8;
-  z-index: 1;
-}
+  /* z-index: 1;
+} */
+/* .mainpage svg * {
+  height: 100% !important;
+  width: 100% !important;
+} */
 .navbar {
   display: flex;
   align-items: center;
@@ -137,7 +156,7 @@ body {
   border-radius: 10000px;
   border: 3px solid white;
   margin-top: 10vh;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .mainheading {
   display: flex;
@@ -152,7 +171,7 @@ body {
   font-size: 50px;
   font-family: "Otterco-Regular";
   line-height: 1.1;
-  background: linear-gradient(to bottom right, #000000, #4b4b4b);
+  background: linear-gradient(to bottom right, #000000, #575757);
   background-clip: text;
   color: transparent;
 }
@@ -187,25 +206,19 @@ body {
 }
 .imagewrapper {
   position: relative;
+  margin-bottom: 50px;
 }
 .name {
   position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translate(80%, -50%) rotate(-10deg);
-  background-color: white;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  width: max-content;
+  background-color: rgba(0, 0, 0, 0.068);
   border-radius: 1000px;
-  padding: 12px;
+  padding: 7px 12px;
   font-size: 15px;
   animation: move 3s ease-in-out infinite alternate;
-}
-@keyframes move {
-  from {
-    transform: translate(80%, -30%) rotate(-10deg);
-  }
-  to {
-    transform: translate(80%, -60%) rotate(-10deg);
-  }
 }
 .mainheading,
 .imagewrapper {
@@ -303,11 +316,7 @@ body {
     font-size: 30px;
   }
 }
-@media (max-width: 400px) {
-  .name {
-    scale: 0.8;
-  }
-}
+
 @media (max-width: 350px) {
   .leftside {
     flex-direction: column;
@@ -349,6 +358,7 @@ body {
   justify-content: center;
   padding: 10vh 5vw;
   border-radius: 0 0 100px 100px;
+  background-image: url("./assets/bg.png");
 }
 .about h1 {
   font-size: 40px;
