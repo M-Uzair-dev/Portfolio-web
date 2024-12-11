@@ -174,6 +174,7 @@ body {
   background: linear-gradient(to bottom right, #000000, #575757);
   background-clip: text;
   color: transparent;
+  font-weight: 700;
 }
 .mainheading .star {
   height: 30px;
@@ -429,7 +430,7 @@ body {
   margin-top: 5vh;
 }
 .skill {
-  background-color: rgb(233, 233, 233);
+  background-color: rgba(233, 233, 233, 0.541);
   border-radius: 10px;
   padding: 15px;
   display: flex;
@@ -472,9 +473,9 @@ body {
   margin-top: 10px;
   color: rgba(0, 0, 0, 0.87);
 }
-.skill:hover {
+/* .skill:hover {
   background-color: rgb(223, 223, 223);
-}
+} */
 .skillWrapper {
   background-color: rgb(219, 219, 219);
   padding: 3px;
@@ -500,4 +501,43 @@ body {
   transform: translate(-50%, -50%);
   z-index: 75;
   background-color: rgba(0, 0, 0, 0.377);
+  transition: all 0.2s ease;
+}
+.skills > h1 {
+  font-size: 40px;
+  font-family: "Otterco-Regular";
+  line-height: 1.1;
+  background: linear-gradient(to bottom right, #000000, #4b4b4b);
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+.skills > p {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.705);
+}
+@media (max-width: 500px) {
+  .skills > p > br {
+    display: none;
+  }
+}
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10vh 5vw;
+}
+.projects > h1 {
+  font-size: 40px;
+  font-family: "Otterco-Regular";
+  line-height: 1.1;
+  background: linear-gradient(to bottom right, #000000, #4b4b4b);
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+.projects > p {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.705);
 }
