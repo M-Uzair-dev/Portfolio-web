@@ -275,6 +275,8 @@ body {
 .about,
 .projects {
   width: 100%;
+
+  background-image: url("./assets/bg.png");
   background-color: #f1f1f1;
   position: relative;
 }
@@ -629,10 +631,10 @@ body {
 .projectsGrid {
   width: 90vw;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 300px);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 230px 230px;
   gap: 10px;
-  max-width: 1000px;
+  max-width: 800px;
   margin-top: 10vh;
 }
 .projectsGrid > div {
@@ -641,7 +643,7 @@ body {
 }
 
 .projectone {
-  grid-column: span 2;
+  grid-column: span 3;
   background-color: rgb(255, 255, 255);
   background-image: url("./assets/mg.png");
   background-position: center;
@@ -654,6 +656,8 @@ body {
   background-position: center;
   background-size: 120px;
   background-repeat: no-repeat;
+
+  grid-column: span 2;
 }
 .projectthree {
   background-color: white;
@@ -661,9 +665,10 @@ body {
   background-position: center;
   background-size: 120px;
   background-repeat: no-repeat;
+  grid-column: span 2;
 }
 .projectfour {
-  grid-column: span 2;
+  grid-column: span 3;
   background-color: white;
   background-image: url("./assets/ta.png");
   background-position: center;
@@ -671,10 +676,65 @@ body {
   background-repeat: no-repeat;
 }
 
-.projectsGrid > div > div {
+.projectsGrid > div > a {
   opacity: 0;
   transition: all 0.4s ease;
+  background-color: rgba(255, 255, 255, 0.781);
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
 }
-.projectsGrid > div:hover > div {
+.projectsGrid > div > a {
+  text-decoration: none !important;
+}
+
+.projectsGrid > div:hover > a {
   opacity: 1;
+}
+.projectsGrid h1 {
+  font-weight: 500;
+  font-size: 23px;
+  margin-bottom: 10px;
+  color: black;
+}
+.projectsGrid p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.767);
+}
+.projectsGrid h1 span {
+  font-size: 13px;
+  color: gray;
+}
+.projectinfo > span {
+  font-size: 12px;
+  margin-top: 5px;
+  color: grey;
+}
+@media (max-width: 820px) {
+  .projectsGrid {
+    grid-template-rows: 270px 270px;
+  }
+}
+@media (max-width: 720px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    justify-items: stretch;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .projectsGrid > div {
+    grid-column: span 1;
+  }
+  .projectsGrid > div > a {
+    padding: 20px;
+  }
+  .projectsGrid > div > a {
+    opacity: 1;
+  }
 }
