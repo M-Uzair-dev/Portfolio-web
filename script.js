@@ -23,3 +23,8 @@ document.querySelectorAll(".skill").forEach((skill) => {
     follower.style.top = `50%`;
   });
 });
+
+const copyEmail = () => {
+  navigator.clipboard.writeText("uzairmanandev@gmail.com");
+  alert("Email copied to clipboard.");
+};
