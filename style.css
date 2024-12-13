@@ -573,7 +573,7 @@ body {
   background: linear-gradient(to bottom right, #000000, #4b4b4b);
   background-clip: text;
   color: transparent;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .projects > p {
   text-align: center;
