@@ -160,8 +160,6 @@ body {
   height: 200px;
   width: 200px;
   border-radius: 10000px;
-  box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.432), -3px -3px 5px white;
-  margin-top: 10vh;
   margin-bottom: 5px;
 }
 .mainheading {
@@ -215,6 +213,14 @@ body {
 .imagewrapper {
   position: relative;
   margin-bottom: 10px;
+  padding: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.568),
+    transparent
+  );
+  border-radius: 10000px;
+  margin-top: 10vh;
 }
 .name {
   position: absolute;
@@ -423,7 +429,7 @@ body {
   }
 }
 @media (max-height: 650px) {
-  .pfp {
+  .imagewrapper {
     margin-top: 5vh;
   }
   .mainpage {
@@ -867,5 +873,13 @@ body {
   }
   .footer * {
     text-align: center;
+  }
+}
+a {
+  text-decoration: none;
+}
+@media (max-width: 550px) {
+  .contact h1 {
+    font-size: 40px;
   }
 }
