@@ -1,8 +1,4 @@
 @font-face {
-  font-family: "Otterco-Thin";
-  src: url("./font/Otterco-Thin.otf") format("opentype");
-}
-@font-face {
   font-family: "Otterco-SemiBold";
   src: url("./font/Otterco-SemiBold.otf") format("opentype");
 }
@@ -10,30 +6,12 @@
   font-family: "Otterco-Regular";
   src: url("./font/Otterco-Regular.otf") format("opentype");
 }
-@font-face {
-  font-family: "Otterco-Medium";
-  src: url("./font/Otterco-Medium.otf") format("opentype");
-}
+
 @font-face {
   font-family: "Otterco-Light";
   src: url("./font/Otterco-Light.otf") format("opentype");
 }
-@font-face {
-  font-family: "Otterco-ExtraLight";
-  src: url("./font/Otterco-ExtraLight.otf") format("opentype");
-}
-@font-face {
-  font-family: "Otterco-ExtraBold";
-  src: url("./font/Otterco-ExtraBold.otf") format("opentype");
-}
-@font-face {
-  font-family: "Otterco-Bold";
-  src: url("./font/Otterco-Bold.otf") format("opentype");
-}
-@font-face {
-  font-family: "OttercoDisplay-Regular";
-  src: url("./font/OttercoDisplay-Regular.otf") format("opentype");
-}
+
 :root {
   scroll-behavior: smooth !important;
 }
