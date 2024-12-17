@@ -73,7 +73,7 @@ body {
   width: 100%;
   height: 100vh;
   padding-bottom: 15vh;
-  border-radius: 0 0 100px 100px;
+  border-radius: 0 0 50px 50px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -243,7 +243,7 @@ body {
 }
 .crousel,
 .skills {
-  border-radius: 0 0 100px 100px;
+  border-radius: 0 0 50px 50px;
   position: relative;
   height: 160px;
   display: flex;
@@ -393,7 +393,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 10vh 5vw;
-  /* border-radius: 0 0 100px 100px; */
+  /* border-radius: 0 0 50px 50px; */
   background-image: url("./assets/bg.png");
 }
 .about h1 {
@@ -442,7 +442,7 @@ body {
   }
 }
 .about {
-  border-radius: 0 0 100px 100px;
+  border-radius: 0 0 50px 50px;
 }
 .skills > * {
   position: relative;
@@ -537,8 +537,11 @@ body {
   border-radius: 1000px;
   transform: translate(-50%, -50%);
   z-index: 75;
-  background-color: rgba(0, 0, 0, 0.185);
-  transition: all 0.2s ease;
+  background-color: rgba(0, 0, 0, 0.09);
+  transition: all 0.3s ease;
+}
+.skillWrapper:has(.skill:hover) .follower {
+  background-color: rgba(0, 0, 0, 0.13);
 }
 .skills > h1 {
   font-size: 40px;
@@ -564,7 +567,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 10vh 5vw;
-  border-radius: 0 0 100px 100px;
+  border-radius: 0 0 50px 50px;
 }
 .projects > h1 {
   font-size: 40px;
@@ -788,7 +791,7 @@ body {
   height: 150px;
   width: 150px;
   border-radius: 1000px;
-  background: linear-gradient(to bottom, #dfdfdf, transparent);
+  background: linear-gradient(to bottom, #dfdfdf86, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -796,7 +799,7 @@ body {
 .logowrapper {
   padding: 2px;
   border-radius: 1000px;
-  background: linear-gradient(to bottom, #ffffff, transparent);
+  background: linear-gradient(to bottom, #ffffff9a, transparent);
   box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.082);
   margin-bottom: 15px;
 }
