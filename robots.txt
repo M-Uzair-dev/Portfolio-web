@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /font/
+
+# Disallow unnecessary files for crawlers
+Disallow: /script.js
+Disallow: /style.css
+
+# Sitemap location
+Sitemap: https://uzairmanan.vercel.app/sitemap.xml
+
+# Crawl-delay (optional - allows 1 second between requests)
+Crawl-delay: 1
+
+# Additional directives for better SEO
+# Allow specific search engines to crawl everything
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: / 

@@ -79,6 +79,7 @@ body {
   width: 100vw;
   padding: 20px 5vw;
   z-index: 2;
+  background-color: transparent;
 }
 .leftside {
   display: flex;
