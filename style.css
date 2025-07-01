@@ -659,7 +659,7 @@ body {
 .projectone {
   grid-column: span 3;
   background-color: rgb(255, 255, 255);
-  background-image: url("./assets/mg.png");
+  background-image: url("./assets/crousel-logo-three.png");
   background-position: center;
   background-size: 200px;
   background-repeat: no-repeat;
@@ -675,7 +675,7 @@ body {
 }
 .projectthree {
   background-color: white;
-  background-image: url("./assets/crousel-logo-three.png");
+  background-image: url("./assets/mg.png");
   background-position: center;
   background-size: 120px;
   background-repeat: no-repeat;
