@@ -78,7 +78,8 @@ body {
   justify-content: space-between;
   width: 100vw;
   padding: 20px 5vw;
-  z-index: 2;
+  position: relative;
+  z-index: 100;
   background-color: transparent;
 }
 .leftside {
@@ -140,6 +141,8 @@ body {
   width: 200px;
   border-radius: 10000px;
   margin-bottom: 5px;
+  position: relative;
+  z-index: 100;
 }
 .mainheading {
   display: flex;
@@ -150,6 +153,7 @@ body {
   position: relative;
   text-align: center;
   margin: 10px 0;
+  z-index: 100;
 }
 .mainheading span {
   font-size: 50px;
@@ -159,6 +163,8 @@ body {
   background-clip: text;
   color: transparent;
   font-weight: 700;
+  position: relative;
+  z-index: 100;
 }
 .mainheading .star {
   height: 30px;
@@ -200,6 +206,7 @@ body {
   );
   border-radius: 10000px;
   margin-top: 10vh;
+  z-index: 100;
 }
 .name {
   position: absolute;
@@ -238,7 +245,7 @@ body {
   height: auto;
   opacity: 0.8;
   position: relative;
-  z-index: 200000;
+  z-index: 100;
 }
 .crousel img:nth-child(2) {
   filter: invert(1);
@@ -384,6 +391,8 @@ body {
   background-clip: text;
   color: transparent;
   margin-bottom: 10px;
+  position: relative;
+  z-index: 100;
 }
 .about * {
   text-align: center;
@@ -396,6 +405,8 @@ body {
   color: transparent;
   width: 50vw;
   margin: 0;
+  position: relative;
+  z-index: 100;
 }
 @media (max-width: 780px) {
   .about p {
@@ -499,7 +510,7 @@ body {
   border-radius: 13px;
   position: relative;
   overflow: hidden;
-  z-index: 50;
+  z-index: 100;
 }
 .skill {
   height: 100%;
@@ -531,10 +542,14 @@ body {
   background-clip: text;
   color: transparent;
   margin-bottom: 10px;
+  position: relative;
+  z-index: 100;
 }
 .skills > p {
   text-align: center;
   color: rgba(0, 0, 0, 0.705);
+  position: relative;
+  z-index: 100;
 }
 @media (max-width: 500px) {
   .skills > p > br {
@@ -557,10 +572,14 @@ body {
   background-clip: text;
   color: transparent;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 100;
 }
 .projects > p {
   text-align: center;
   color: rgba(0, 0, 0, 0.705);
+  position: relative;
+  z-index: 100;
 }
 .mainButton {
   margin-top: 20px;
@@ -574,6 +593,7 @@ body {
   /* letter-spacing: 0.5px; */
   position: relative;
   cursor: pointer;
+  z-index: 100;
 }
 .mainButton p {
   overflow: hidden;
@@ -652,6 +672,8 @@ body {
   gap: 10px;
   max-width: 800px;
   margin-top: 10vh;
+  position: relative;
+  z-index: 100;
 }
 .projectsGrid > div {
   border-radius: 15px;
@@ -783,6 +805,8 @@ body {
   background: linear-gradient(to bottom, #ffffff9a, transparent);
   box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.082);
   margin-bottom: 15px;
+  position: relative;
+  z-index: 100;
 }
 .contact h2 {
   font-size: 50px;
@@ -794,11 +818,15 @@ body {
   letter-spacing: -0.5px;
   text-align: center;
   max-width: 90vw;
+  position: relative;
+  z-index: 100;
 }
 .buttons {
   margin-top: 20px;
   display: flex;
   gap: 20px;
+  position: relative;
+  z-index: 100;
 }
 .buttons a {
   margin-top: 20px;
@@ -830,6 +858,8 @@ body {
   background-color: #dfdfdf;
   background-image: url("./assets/bg.png");
   border-radius: 100px 100px 0 0;
+  position: relative;
+  z-index: 100;
 }
 .footerleft p {
   color: rgba(0, 0, 0, 0.795);
