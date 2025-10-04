@@ -4,53 +4,63 @@
   
   <!-- Main Portfolio Page -->
   <url>
-    <loc>https://uzairmanan.vercel.app/</loc>
-    <lastmod>2025-01-03</lastmod>
+    <loc>https://uzairmanan.com/</loc>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://uzairmanan.vercel.app/assets/pfp.png</image:loc>
+      <image:loc>https://uzairmanan.com/assets/pfp.png</image:loc>
       <image:title>Uzair Manan - Full Stack Web Developer</image:title>
       <image:caption>Professional portrait of Uzair Manan, full-stack web developer from Karachi, Pakistan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://uzairmanan.com/assets/gallery/1.jpg</image:loc>
+      <image:title>Uzair Manan Professional Photo</image:title>
+      <image:caption>Uzair Manan, experienced web developer from Karachi specializing in React and Node.js</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://uzairmanan.com/assets/gallery/2.jpg</image:loc>
+      <image:title>Uzair Manan Web Developer Photo</image:title>
+      <image:caption>Uzair Manan, software engineer and full stack web developer from Karachi, Pakistan</image:caption>
     </image:image>
   </url>
 
   <!-- About Section -->
   <url>
-    <loc>https://uzairmanan.vercel.app/#about</loc>
-    <lastmod>2025-01-03</lastmod>
+    <loc>https://uzairmanan.com/#about</loc>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Skills Section -->
   <url>
-    <loc>https://uzairmanan.vercel.app/#skills</loc>
-    <lastmod>2025-01-03</lastmod>
+    <loc>https://uzairmanan.com/#skills</loc>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Projects Section -->
   <url>
-    <loc>https://uzairmanan.vercel.app/#projects</loc>
-    <lastmod>2025-01-03</lastmod>
+    <loc>https://uzairmanan.com/#projects</loc>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Contact Section -->
   <url>
-    <loc>https://uzairmanan.vercel.app/#contact</loc>
-    <lastmod>2025-01-03</lastmod>
+    <loc>https://uzairmanan.com/#contact</loc>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Resume/CV -->
   <url>
-    <loc>https://uzairmanan.vercel.app/assets/Uzair%20Manan's%20Resume.pdf</loc>
-    <lastmod>2025-01-03</lastmod>
+    <loc>https://uzairmanan.com/assets/Uzair%20Manan's%20Resume.pdf</loc>
+    <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
