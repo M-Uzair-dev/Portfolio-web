@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     links.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-
             const targetId = this.getAttribute('href');
             // Skip if it's just "#"
             if (targetId === '#') return;
+
+            e.preventDefault();
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
@@ -178,6 +178,7 @@ const modalTechStack = modal.querySelector('.modal-tech-stack');
 const modalDescription = modal.querySelector('.modal-description');
 const modalFeatures = modal.querySelector('.modal-features');
 const modalVisitBtn = modal.querySelector('.modal-visit-btn');
+const modalFigmaBtn = modal.querySelector('.modal-figma-btn');
 
 // Open modal
 function openModal(projectKey) {
@@ -205,6 +206,16 @@ function openModal(projectKey) {
 
   // Visit button
   modalVisitBtn.href = project.url;
+  modalVisitBtn.target = '_blank';
+
+  // Figma button (show only if project has figmaUrl)
+  if (project.figmaUrl) {
+    modalFigmaBtn.href = project.figmaUrl;
+    modalFigmaBtn.target = '_blank';
+    modalFigmaBtn.style.display = 'inline-block';
+  } else {
+    modalFigmaBtn.style.display = 'none';
+  }
 
   // Show modal
   modal.classList.add('active');
