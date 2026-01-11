@@ -313,47 +313,40 @@
       <p>I Build innovative web solutions that connect ideas to impact.</p>
       <div class="projectsGrid">
         <div class="projectone">
-          <a href="https://behindtext.vercel.app/" target="_blank" class="projectinfo">
-            <h1>BehindText <span>(2025)</span></h1>
+          <div class="projectinfo" data-project="coinquest">
+            <h1>CoinQuest <span>(2026)</span></h1>
             <p>
-              BehindText is a powerful AI Powered Image editing tool that allows
-              you to add text on images and behind subject. This uses AI to
-              separate the subject from the background and then add the text between them.
+              Financial literacy platform for children with interactive lessons, games, and rewards system.
             </p>
-            <span>Click to open website</span>
-          </a>
+            <span class="read-more">Click to read more</span>
+          </div>
         </div>
         <div class="projecttwo">
-          <a href="https://corleeandco.com" target="_blank" class="projectinfo">
+          <div class="projectinfo" data-project="corlee">
             <h1>Corlee <span>(2024)</span></h1>
             <p>
-              Corlee is an E-Commerce web application that we made for a client.
-              It is used for selling wholesale fabrics to various businesses
-              around the world.
+              B2B e-commerce platform for wholesale fabric business connecting suppliers with buyers worldwide.
             </p>
-            <span>Click to open website</span>
-          </a>
+            <span class="read-more">Click to read more</span>
+          </div>
         </div>
         <div class="projectthree">
-          <a href="https://messegit.vercel.app" target="_blank" class="projectinfo">
-            <h1>Messegit <span>(2023)</span></h1>
+          <div class="projectinfo" data-project="trendsjoy">
+            <h1>TrendsJoy <span>(2025)</span></h1>
             <p>
-              Messegit is a messaging web app where users can sign up with Google, chat using usernames, create groups, and access privacy features.
+              Trend discovery platform with AI assistant, customized feeds, and multi-language support.
             </p>
-            <span>Click to open website</span>
-          </a>
+            <span class="read-more">Click to read more</span>
+          </div>
         </div>
         <div class="projectfour">
-          <a href="https://thoughts-area.vercel.app" target="_blank" class="projectinfo">
-            <h1>Thoughts Area <span>(2024)</span></h1>
+          <div class="projectinfo" data-project="thoughtsarea">
+            <h1>Thoughts Area <span>(2025)</span></h1>
             <p>
-              Thoughts area is one of my personal projects. It is a social media
-              platform similar to reddit where you can post, comment and
-              interact with other users. it also has a followers system and
-              multiple social media Oauth login support.
+              Reddit-inspired social platform with posts, comments, followers, and OAuth login support.
             </p>
-            <span>Click to open website</span>
-          </a>
+            <span class="read-more">Click to read more</span>
+          </div>
         </div>
       </div>
     </section>
@@ -389,6 +382,22 @@
         </div>
       </div>
     </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-body">
+          <h1 class="modal-title"></h1>
+          <div class="modal-tech-stack"></div>
+          <div class="modal-description"></div>
+          <div class="modal-features"></div>
+          <a href="#" target="_blank" class="modal-visit-btn">Visit Website</a>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

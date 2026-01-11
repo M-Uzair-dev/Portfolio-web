@@ -660,9 +660,9 @@ body {
 .projectone {
   grid-column: span 3;
   background-color: rgb(255, 255, 255);
-  background-image: url("./assets/crousel-logo-three.png");
+  background-image: url("./assets/cc.png");
   background-position: center;
-  background-size: 200px;
+  background-size: 100px;
   background-repeat: no-repeat;
 }
 .projecttwo {
@@ -676,9 +676,9 @@ body {
 }
 .projectthree {
   background-color: white;
-  background-image: url("./assets/mg.png");
+  background-image: url("./assets/tj.svg");
   background-position: center;
-  background-size: 120px;
+  background-size: 72px;
   background-repeat: no-repeat;
   grid-column: span 2;
 }
@@ -691,7 +691,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.projectsGrid > div > a {
+.projectsGrid .projectinfo {
   opacity: 0;
   transition: all 0.4s ease;
   background-color: rgba(255, 255, 255, 0.911);
@@ -702,12 +702,10 @@ body {
   display: flex;
   justify-content: end;
   flex-direction: column;
-}
-.projectsGrid > div > a {
   text-decoration: none !important;
 }
 
-.projectsGrid > div:hover > a {
+.projectsGrid > div:hover .projectinfo {
   opacity: 1;
 }
 .projectsGrid h1 {
@@ -746,10 +744,8 @@ body {
   .projectsGrid > div {
     grid-column: span 1;
   }
-  .projectsGrid > div > a {
+  .projectsGrid .projectinfo {
     padding: 20px;
-  }
-  .projectsGrid > div > a {
     opacity: 1;
   }
 }
@@ -883,4 +879,205 @@ a {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999999999999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+  z-index: 99999999999999998;
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  background-image: url("./assets/bg.png");
+  border-radius: 5px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  z-index: 99999999999999999;
+  animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-body {
+  padding: 40px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #000;
+  z-index: 100000000000000000;
+}
+
+.modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: rotate(90deg);
+}
+
+.modal-title {
+  font-size: 36px;
+  font-family: "Otterco-SemiBold";
+  background: linear-gradient(to bottom right, #000000, #4b4b4b);
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.modal-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.modal-tech-stack span {
+  background-color: rgba(0, 0, 0, 0.08);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 25px;
+}
+
+.modal-features {
+  margin-bottom: 30px;
+}
+
+.modal-features h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-features li {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.75);
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.modal-features li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #000;
+  font-weight: bold;
+}
+
+.modal-visit-btn {
+  display: inline-block;
+  padding: 15px 35px;
+  background: linear-gradient(to bottom right, #131313, #353535);
+  color: white;
+  border-radius: 1000px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.modal-visit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.read-more {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+}
+
+.projectinfo {
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-body {
+    padding: 30px 25px;
+  }
+
+  .modal-title {
+    font-size: 28px;
+  }
+
+  .modal-content {
+    max-height: 90vh;
+  }
 }
