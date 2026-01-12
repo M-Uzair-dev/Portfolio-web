@@ -26,12 +26,24 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  user-select: none !important;
-  -webkit-tap-highlight-color: transparent !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
 * {
   font-family: "Poppins", serif;
+}
+
+/* Accessibility - Focus states for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #303030;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #303030;
+  outline-offset: 3px;
 }
 
 /* customize scrollbar  */
@@ -57,21 +69,8 @@ body {
   flex-direction: column;
   background-color: #dfdfdf;
   background-image: url("./assets/bg.png");
-  /* background-size: 30px 30px; */
 }
-/* .mainpage svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100% !important;
-  width: 100% !important;
-  opacity: 0.8;
-  /* z-index: 1;
-} */
-/* .mainpage svg * {
-  height: 100% !important;
-  width: 100% !important;
-} */
+
 .navbar {
   display: flex;
   align-items: center;
@@ -217,10 +216,10 @@ body {
 .imagewrapper {
   z-index: 2;
 }
-.crousel {
+.carousel {
   padding: 0 5vw !important;
 }
-.crousel,
+.carousel,
 .skills {
   border-radius: 0 0 50px 50px;
   position: relative;
@@ -233,16 +232,16 @@ body {
   background-image: url("./assets/bg.png");
   background-color: white;
 }
-.crousel img {
+.carousel img {
   width: 120px;
   opacity: 0.8;
   position: relative;
   z-index: 200000;
 }
-.crousel img:nth-child(2) {
+.carousel img:nth-child(2) {
   filter: invert(1);
 }
-.crousel::before,
+.carousel::before,
 .skills::before {
   content: "";
   height: 100px;
@@ -256,7 +255,7 @@ body {
   background-image: url("./assets/bg.png");
   background-size: 100vh;
 }
-.crousel::after,
+.carousel::after,
 .skills::after {
   content: "";
   height: 100px;
@@ -340,7 +339,7 @@ body {
 }
 
 @media (max-width: 700px) {
-  .crousel {
+  .carousel {
     gap: 30px 50px;
     display: grid;
     grid-template-rows: 50px 50px;
@@ -352,16 +351,16 @@ body {
     height: 220px;
     gap: 30px 30px;
   }
-  .crousel img {
+  .carousel img {
     width: 100px;
   }
 }
 
 @media (max-width: 330px) {
-  .crousel img {
+  .carousel img {
     width: 80px;
   }
-  .crousel {
+  .carousel {
     gap: 30px 10px;
   }
 }
@@ -466,6 +465,31 @@ body {
   object-fit: cover;
 }
 
+/* Individual skill logo backgrounds */
+.skillWrapper:nth-child(1) .toppart img {
+  background-color: rgb(0, 144, 180);
+}
+
+.skillWrapper:nth-child(2) .toppart img {
+  background-color: #acff53;
+}
+
+.skillWrapper:nth-child(3) .toppart img {
+  background-color: #393939;
+}
+
+.skillWrapper:nth-child(4) .toppart img {
+  background-color: #13aa52;
+}
+
+.skillWrapper:nth-child(5) .toppart img {
+  background-color: white;
+}
+
+.skillWrapper:nth-child(6) .toppart img {
+  background-color: #017acb;
+}
+
 .toppart {
   display: flex;
   align-items: center;
@@ -489,9 +513,7 @@ body {
   margin-top: 10px;
   color: rgba(0, 0, 0, 0.87);
 }
-/* .skill:hover {
-  background-color: rgb(223, 223, 223);
-} */
+
 .skillWrapper {
   background-color: rgb(240, 240, 240);
   padding: 3px;
@@ -878,23 +900,53 @@ a {
   }
 }
 
-.seo-text {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-  opacity: 0;
-  pointer-events: none;
-  user-select: none;
-}
-
 html {
   scroll-behavior: smooth;
+}
+
+/* Page load animations */
+body {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.mainpage > * {
+  animation: slideUpFade 0.8s ease-out backwards;
+}
+
+.mainpage > .navbar {
+  animation-delay: 0.1s;
+}
+
+.mainpage > .imagewrapper {
+  animation-delay: 0.2s;
+}
+
+.mainpage > .mainheading {
+  animation-delay: 0.3s;
+}
+
+.mainpage > .mainButton {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Modal Styles */

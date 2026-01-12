@@ -57,16 +57,30 @@
     <meta name="geo.position" content="24.8607;67.0011" />
     <meta name="ICBM" content="24.8607, 67.0011" />
 
+    <!-- PWA Features -->
+    <meta name="theme-color" content="#dfdfdf" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#dfdfdf" />
+
     <link rel="canonical" href="https://uzairmanan.com" />
+    <link rel="manifest" href="./manifest.json" />
     <link rel="shortcut icon" href="./assets/pfp.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="./assets/pfp.png" />
-    <link rel="stylesheet" href="style.css" />
+    <!-- Resource hints for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+    <!-- Optimized font loading - only necessary weights -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="./assets/pfp.png" as="image" />
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Structured Data for Person/Professional -->
     <script type="application/ld+json">
@@ -138,24 +152,6 @@
   </head>
 
   <body>
-    <!-- Hidden SEO Text -->
-    <div class="seo-text">
-      <h1>Uzair Manan - Full Stack Web Developer Portfolio</h1>
-      <p>
-        Welcome to Uzair Manan's professional portfolio. Uzair Manan is a
-        skilled full-stack web developer from Karachi, Pakistan.
-      </p>
-      <p>
-        Uzair Manan specializes in React.js, Node.js, Express.js, and MongoDB
-        development.
-      </p>
-      <p>Contact Uzair Manan for professional web development services.</p>
-      <p>Hire Uzair Manan for your next web development project.</p>
-      <p>
-        Uzair Manan - Building innovative web solutions in Karachi, Pakistan.
-      </p>
-    </div>
-
     <main class="mainpage">
       <nav class="navbar">
         <div class="leftside">
@@ -182,13 +178,13 @@
         </div>
       </nav>
       <div class="imagewrapper">
-        <img src="./assets/pfp.png" class="pfp" alt="My Image" />
+        <img src="./assets/pfp.png" class="pfp" alt="Uzair Manan - Full Stack Web Developer" loading="lazy" />
       </div>
       <h1 class="mainheading">
         <span>Building Bridges</span> <span>Between Your Brand</span>
         <span>and the web.</span>
-        <img src="./assets/star.png" alt="star" class="star" />
-        <img src="./assets/star.png" alt="star" class="star2" />
+        <img src="./assets/star.png" alt="Decorative star icon" class="star" loading="lazy" />
+        <img src="./assets/star.png" alt="Decorative star icon" class="star2" loading="lazy" />
       </h1>
       <a class="mainButton" href="#contact">
         <div class="absolutep">
@@ -202,11 +198,11 @@
       </a>
     </main>
 
-    <section class="crousel">
-      <img src="./assets/crousel-logo-one.png" alt="logo" />
-      <img src="./assets/crousel-logo-two.png" alt="logo" />
-      <img src="./assets/crousel-logo-three.png" alt="logo" />
-      <img src="./assets/crousel-logo-four.png" alt="logo" />
+    <section class="carousel">
+      <img src="./assets/crousel-logo-one.png" alt="Corlee & Co brand logo" loading="lazy" />
+      <img src="./assets/crousel-logo-two.png" alt="Technology partner logo" loading="lazy" />
+      <img src="./assets/crousel-logo-three.png" alt="Client brand logo" loading="lazy" />
+      <img src="./assets/crousel-logo-four.png" alt="Technology stack logo" loading="lazy" />
     </section>
 
     <section class="about">
@@ -237,14 +233,14 @@
         <div class="skillWrapper">
           <div class="skill">
             <div class="toppart">
-              <img class="image" src="./assets/react.png" alt="React logo" />
+              <img class="image" src="./assets/react.png" alt="React JavaScript library logo" loading="lazy" />
               <div class="details">
                 <p class="skillName">React</p>
                 <p class="SkillAbout">3 Years</p>
               </div>
             </div>
             <p class="skillDetails">
-              I have 2 years of experience with React, creating interactive and
+              I have 3 years of experience with React, creating interactive and
               responsive user interfaces for various projects. I am proficient
               in advanced React concepts.
             </p>
@@ -258,8 +254,8 @@
               <img
                 class="image"
                 src="./assets/node.png"
-                style="background-color: #acff53"
-                alt="Node.js logo"
+                alt="Node.js JavaScript runtime logo"
+                loading="lazy"
               />
               <div class="details">
                 <p class="skillName">Node.js</p>
@@ -267,7 +263,7 @@
               </div>
             </div>
             <p class="skillDetails">
-              I have worked with Node.js for 2 years, using my JavaScript skills
+              I have worked with Node.js for 3 years, using my JavaScript skills
               to build efficient backend systems.
             </p>
           </div>
@@ -280,8 +276,8 @@
               <img
                 class="image"
                 src="./assets/ex.png"
-                style="background-color: #393939"
-                alt="Express.js logo"
+                alt="Express.js web framework logo"
+                loading="lazy"
               />
               <div class="details">
                 <p class="skillName">Express.js</p>
@@ -289,7 +285,7 @@
               </div>
             </div>
             <p class="skillDetails">
-              I have been using Express.js for over two years to create dynamic
+              I have been using Express.js for over 3 years to create dynamic
               APIs and backend routes for web applications.
             </p>
           </div>
@@ -302,8 +298,8 @@
               <img
                 class="image"
                 src="./assets/mongo.png"
-                style="background-color: #13aa52"
-                alt="MongoDB logo"
+                alt="MongoDB NoSQL database logo"
+                loading="lazy"
               />
               <div class="details">
                 <p class="skillName">MongoDB</p>
@@ -312,7 +308,7 @@
             </div>
             <p class="skillDetails">
               MongoDB is a fast and easy-to-use database that I have been using
-              for over two years, combined with Node.js and Express.js to build
+              for over 3 years, combined with Node.js and Express.js to build
               full-stack web applications.
             </p>
           </div>
@@ -325,8 +321,8 @@
               <img
                 class="image"
                 src="./assets/nextjs.png"
-                style="background-color: white"
-                alt="Next.js logo"
+                alt="Next.js React framework logo"
+                loading="lazy"
               />
               <div class="details">
                 <p class="skillName">Next.js</p>
@@ -334,7 +330,7 @@
               </div>
             </div>
             <p class="skillDetails">
-              I have been using Next.js for over a year to simplify React
+              I have been using Next.js for over two years to simplify React
               development by reducing repetitive code and improving performance.
             </p>
           </div>
@@ -347,8 +343,8 @@
               <img
                 class="image"
                 src="./assets/ts.png"
-                style="background-color: #017acb"
-                alt="TypeScript logo"
+                alt="TypeScript programming language logo"
+                loading="lazy"
               />
               <div class="details">
                 <p class="skillName">TypeScript</p>
@@ -435,7 +431,7 @@
     <section class="contact" id="contact">
       <div class="logowrapper">
         <div class="contactlogo">
-          <img src="./assets/contactLogo.png" alt="contact icon" />
+          <img src="./assets/contactLogo.png" alt="Contact envelope icon" loading="lazy" />
         </div>
       </div>
       <h1 class="contactheading1">Tell me about your next</h1>
@@ -448,7 +444,7 @@
 
     <footer class="footer">
       <div class="footerleft">
-        <p>© 2025 All Rights Reserved</p>
+        <p>© <span id="current-year">2026</span> All Rights Reserved</p>
         <p>Developed by <span>Uzair Manan</span></p>
       </div>
       <div class="footerRight">

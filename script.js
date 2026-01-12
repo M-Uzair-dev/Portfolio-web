@@ -1,27 +1,48 @@
+// Dynamic year in footer
+try {
+  const yearElement = document.getElementById('current-year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+} catch (error) {
+  console.error('Error updating year:', error);
+}
+
+// Skill hover effect with error handling
 document.querySelectorAll(".skill").forEach((skill) => {
-  skill.addEventListener("mousemove", (e) => {
-    const skillWrapper = skill.parentElement;
-    const follower = skillWrapper.querySelector(".follower");
+  try {
+    skill.addEventListener("mousemove", (e) => {
+      const skillWrapper = skill.parentElement;
+      const follower = skillWrapper?.querySelector(".follower");
 
-    // Get the position of the skillWrapper element
-    const rect = skillWrapper.getBoundingClientRect();
+      if (!follower) return;
 
-    // Calculate mouse position relative to skillWrapper
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+      // Get the position of the skillWrapper element
+      const rect = skillWrapper.getBoundingClientRect();
 
-    // Adjust the position of the follower element to match the mouse cursor
-    follower.style.position = "absolute";
-    follower.style.left = `${x}px`;
-    follower.style.top = `${y}px`;
-  });
-  skill.addEventListener("mouseleave", (e) => {
-    const skillWrapper = skill.parentElement;
-    const follower = skillWrapper.querySelector(".follower");
-    follower.style.position = "absolute";
-    follower.style.left = `50%`;
-    follower.style.top = `50%`;
-  });
+      // Calculate mouse position relative to skillWrapper
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      // Adjust the position of the follower element to match the mouse cursor
+      follower.style.position = "absolute";
+      follower.style.left = `${x}px`;
+      follower.style.top = `${y}px`;
+    });
+
+    skill.addEventListener("mouseleave", (e) => {
+      const skillWrapper = skill.parentElement;
+      const follower = skillWrapper?.querySelector(".follower");
+
+      if (!follower) return;
+
+      follower.style.position = "absolute";
+      follower.style.left = `50%`;
+      follower.style.top = `50%`;
+    });
+  } catch (error) {
+    console.error('Error setting up skill hover effect:', error);
+  }
 });
 
 const copyEmail = () => {
@@ -29,28 +50,36 @@ const copyEmail = () => {
   alert("Email copied to clipboard.");
 };
 
-// Smooth scroll implementation
+// Smooth scroll implementation with error handling
 document.addEventListener('DOMContentLoaded', function() {
-    // Get all links that have hash (#) in them
-    const links = document.querySelectorAll('a[href^="#"]');
+    try {
+        // Get all links that have hash (#) in them
+        const links = document.querySelectorAll('a[href^="#"]');
 
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            // Skip if it's just "#"
-            if (targetId === '#') return;
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                try {
+                    const targetId = this.getAttribute('href');
+                    // Skip if it's just "#"
+                    if (targetId === '#') return;
 
-            e.preventDefault();
+                    e.preventDefault();
 
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error during smooth scroll:', error);
+                }
+            });
         });
-    });
+    } catch (error) {
+        console.error('Error setting up smooth scroll:', error);
+    }
 });
 
 // Project data for modal
@@ -169,82 +198,126 @@ const projectData = {
   }
 };
 
-// Modal functionality
-const modal = document.getElementById('projectModal');
-const modalOverlay = modal.querySelector('.modal-overlay');
-const modalClose = modal.querySelector('.modal-close');
-const modalTitle = modal.querySelector('.modal-title');
-const modalTechStack = modal.querySelector('.modal-tech-stack');
-const modalDescription = modal.querySelector('.modal-description');
-const modalFeatures = modal.querySelector('.modal-features');
-const modalVisitBtn = modal.querySelector('.modal-visit-btn');
-const modalFigmaBtn = modal.querySelector('.modal-figma-btn');
+// Modal functionality with error handling
+try {
+  const modal = document.getElementById('projectModal');
 
-// Open modal
-function openModal(projectKey) {
-  const project = projectData[projectKey];
-  if (!project) return;
-
-  // Populate modal content
-  modalTitle.textContent = `${project.title} (${project.year})`;
-
-  // Tech stack
-  modalTechStack.innerHTML = project.techStack
-    .map(tech => `<span>${tech}</span>`)
-    .join('');
-
-  // Description
-  modalDescription.textContent = project.description;
-
-  // Features
-  modalFeatures.innerHTML = `
-    <h3>Key Features & Technologies</h3>
-    <ul>
-      ${project.features.map(feature => `<li>${feature}</li>`).join('')}
-    </ul>
-  `;
-
-  // Visit button
-  modalVisitBtn.href = project.url;
-  modalVisitBtn.target = '_blank';
-
-  // Figma button (show only if project has figmaUrl)
-  if (project.figmaUrl) {
-    modalFigmaBtn.href = project.figmaUrl;
-    modalFigmaBtn.target = '_blank';
-    modalFigmaBtn.style.display = 'inline-block';
-  } else {
-    modalFigmaBtn.style.display = 'none';
+  if (!modal) {
+    throw new Error('Modal element not found');
   }
 
-  // Show modal
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
+  const modalOverlay = modal.querySelector('.modal-overlay');
+  const modalClose = modal.querySelector('.modal-close');
+  const modalTitle = modal.querySelector('.modal-title');
+  const modalTechStack = modal.querySelector('.modal-tech-stack');
+  const modalDescription = modal.querySelector('.modal-description');
+  const modalFeatures = modal.querySelector('.modal-features');
+  const modalVisitBtn = modal.querySelector('.modal-visit-btn');
+  const modalFigmaBtn = modal.querySelector('.modal-figma-btn');
 
-// Close modal
-function closeModal() {
-  modal.classList.remove('active');
-  document.body.style.overflow = 'auto';
-}
+  // Open modal with loading state
+  function openModal(projectKey) {
+    try {
+      const project = projectData[projectKey];
+      if (!project) {
+        console.error(`Project data not found for key: ${projectKey}`);
+        return;
+      }
 
-// Event listeners for project cards
-document.querySelectorAll('.projectinfo').forEach(card => {
-  card.addEventListener('click', function() {
-    const projectKey = this.getAttribute('data-project');
-    openModal(projectKey);
+      // Show loading state
+      modal.classList.add('active');
+      modalTitle.textContent = 'Loading...';
+      modalTechStack.innerHTML = '';
+      modalDescription.textContent = '';
+      modalFeatures.innerHTML = '';
+
+      // Simulate loading delay for smooth transition
+      setTimeout(() => {
+        // Populate modal content
+        modalTitle.textContent = `${project.title} (${project.year})`;
+
+        // Tech stack
+        modalTechStack.innerHTML = project.techStack
+          .map(tech => `<span>${tech}</span>`)
+          .join('');
+
+        // Description
+        modalDescription.textContent = project.description;
+
+        // Features
+        modalFeatures.innerHTML = `
+          <h3>Key Features & Technologies</h3>
+          <ul>
+            ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+          </ul>
+        `;
+
+        // Visit button
+        modalVisitBtn.href = project.url;
+        modalVisitBtn.target = '_blank';
+
+        // Figma button (show only if project has figmaUrl)
+        if (project.figmaUrl) {
+          modalFigmaBtn.href = project.figmaUrl;
+          modalFigmaBtn.target = '_blank';
+          modalFigmaBtn.style.display = 'inline-block';
+        } else {
+          modalFigmaBtn.style.display = 'none';
+        }
+      }, 100);
+
+      document.body.style.overflow = 'hidden';
+    } catch (error) {
+      console.error('Error opening modal:', error);
+      modalTitle.textContent = 'Error loading project';
+      modalDescription.textContent = 'Sorry, there was an error loading this project.';
+    }
+  }
+
+  // Close modal
+  function closeModal() {
+    try {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    } catch (error) {
+      console.error('Error closing modal:', error);
+    }
+  }
+
+  // Event listeners for project cards
+  document.querySelectorAll('.projectinfo').forEach(card => {
+    card.addEventListener('click', function() {
+      try {
+        const projectKey = this.getAttribute('data-project');
+        if (projectKey) {
+          openModal(projectKey);
+        }
+      } catch (error) {
+        console.error('Error handling project card click:', error);
+      }
+    });
   });
-});
 
-// Close modal on overlay click
-modalOverlay.addEventListener('click', closeModal);
-
-// Close modal on close button click
-modalClose.addEventListener('click', closeModal);
-
-// Close modal on ESC key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape' && modal.classList.contains('active')) {
-    closeModal();
+  // Close modal on overlay click
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', closeModal);
   }
-});
+
+  // Close modal on close button click
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+  }
+
+  // Close modal on ESC key
+  document.addEventListener('keydown', function(e) {
+    try {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    } catch (error) {
+      console.error('Error handling ESC key:', error);
+    }
+  });
+} catch (error) {
+  console.error('Error initializing modal functionality:', error);
+}

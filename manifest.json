@@ -1,0 +1,26 @@
+{
+  "name": "Uzair Manan - Full Stack Web Developer Portfolio",
+  "short_name": "Uzair Manan",
+  "description": "Professional portfolio of Uzair Manan, an experienced full-stack web developer from Karachi, Pakistan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#dfdfdf",
+  "theme_color": "#dfdfdf",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./assets/pfp.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/pfp.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "web development", "business"],
+  "lang": "en-US"
+}
