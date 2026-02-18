@@ -217,7 +217,11 @@ button:focus-visible {
   z-index: 2;
 }
 .carousel {
-  padding: 0 5vw !important;
+  padding: 30px 5vw !important;
+  height: auto !important;
+  min-height: 160px;
+  justify-content: center;
+  gap: 20px;
 }
 .carousel,
 .skills {
@@ -232,14 +236,25 @@ button:focus-visible {
   background-image: url("./assets/bg.png");
   background-color: white;
 }
-.carousel img {
-  width: 120px;
-  opacity: 0.8;
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 200000;
+  flex: 1;
+  text-align: center;
 }
-.carousel img:nth-child(2) {
-  filter: invert(1);
+.stat-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  opacity: 0.7;
 }
 .carousel::before,
 .skills::before {
@@ -340,28 +355,15 @@ button:focus-visible {
 
 @media (max-width: 700px) {
   .carousel {
-    gap: 30px 50px;
-    display: grid;
-    grid-template-rows: 50px 50px;
-    grid-template-columns: 120px 120px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     align-items: center;
     justify-items: center;
     align-content: center;
     justify-content: center;
-    height: 220px;
-    gap: 30px 30px;
-  }
-  .carousel img {
-    width: 100px;
-  }
-}
-
-@media (max-width: 330px) {
-  .carousel img {
-    width: 80px;
-  }
-  .carousel {
-    gap: 30px 10px;
+    gap: 24px !important;
+    padding: 30px 5vw !important;
   }
 }
 .about {
