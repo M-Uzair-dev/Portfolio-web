@@ -8,42 +8,40 @@ try {
   console.error('Error updating year:', error);
 }
 
-// Skill hover effect with error handling
-document.querySelectorAll(".skill").forEach((skill) => {
-  try {
-    skill.addEventListener("mousemove", (e) => {
-      const skillWrapper = skill.parentElement;
-      const follower = skillWrapper?.querySelector(".follower");
+// Skills stagger entrance animation
+try {
+  const skillsGrid = document.querySelector('.skillsGrid');
+  if (skillsGrid) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      if (!follower) return;
+    if (reducedMotion) {
+      // Show all immediately for reduced-motion users
+      skillsGrid.querySelectorAll('.skill-item').forEach(item => {
+        item.classList.add('skill-visible');
+      });
+    } else if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.skill-item').forEach((item, i) => {
+              setTimeout(() => item.classList.add('skill-visible'), i * 55);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
 
-      // Get the position of the skillWrapper element
-      const rect = skillWrapper.getBoundingClientRect();
-
-      // Calculate mouse position relative to skillWrapper
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      // Adjust the position of the follower element to match the mouse cursor
-      follower.style.position = "absolute";
-      follower.style.left = `${x}px`;
-      follower.style.top = `${y}px`;
-    });
-
-    skill.addEventListener("mouseleave", (e) => {
-      const skillWrapper = skill.parentElement;
-      const follower = skillWrapper?.querySelector(".follower");
-
-      if (!follower) return;
-
-      follower.style.position = "absolute";
-      follower.style.left = `50%`;
-      follower.style.top = `50%`;
-    });
-  } catch (error) {
-    console.error('Error setting up skill hover effect:', error);
+      observer.observe(skillsGrid);
+    } else {
+      // Fallback for browsers without IntersectionObserver
+      skillsGrid.querySelectorAll('.skill-item').forEach(item => {
+        item.classList.add('skill-visible');
+      });
+    }
   }
-});
+} catch (error) {
+  console.error('Error setting up skills animation:', error);
+}
 
 const copyEmail = () => {
   navigator.clipboard.writeText("uzairmanandev@gmail.com");
