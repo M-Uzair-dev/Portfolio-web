@@ -951,12 +951,6 @@ button:focus-visible {
   color: black;
 }
 @media (max-width: 575px) {
-  .contactheading1::after {
-    content: " project.";
-  }
-  .contactheading2 {
-    display: none;
-  }
 }
 @media (max-width: 610px) {
   .footer {

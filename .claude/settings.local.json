@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Noman/.claude/plugins/cache/ui-ux-pro-max-skill/ui-ux-pro-max/2.5.0/.claude/skills/ui-ux-pro-max/**)",
+      "Bash(python skills/ui-ux-pro-max/scripts/search.py \"developer portfolio skills section minimal clean light\" --design-system)",
+      "Bash(python3 skills/ui-ux-pro-max/scripts/search.py \"developer portfolio skills section minimal clean light\" --design-system)",
+      "Bash(python3 scripts/search.py \"developer portfolio skills section minimal clean light\" --design-system)",
+      "Bash(py \"C:\\\\Users\\\\Noman\\\\.claude\\\\plugins\\\\cache\\\\ui-ux-pro-max-skill\\\\ui-ux-pro-max\\\\2.5.0\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"developer portfolio skills section minimal clean light\" --design-system)",
+      "Bash(py \"C:\\\\Users\\\\Noman\\\\.claude\\\\plugins\\\\cache\\\\ui-ux-pro-max-skill\\\\ui-ux-pro-max\\\\2.5.0\\\\cli\\\\assets\\\\scripts\\\\search.py\" \"developer portfolio skills section minimal clean light\" --design-system)"
+    ]
+  }
+}
